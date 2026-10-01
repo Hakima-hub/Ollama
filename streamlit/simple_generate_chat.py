@@ -11,17 +11,22 @@ if "messages" not in st.session_state:
 
 for message in st.session_state.messages:
    # if message['role'] == 'Assistant':
-        #continue
+       # continue
     with st.chat_message(message['role']):
         st.markdown(message['content'])
-       
-user_input = input('Hello, what can i summarize for you?')
+
+def getChatResponse (messages, model=MODEL):
+    with st.spinner("Wait for it..."):
+        response = generate(model=MODEL, messages=messages)
+        return response.message.content
+              
+user_input = st.chat_input('what can i summarize for you?')
 if user_input:
     st.session_state.messages.append({'role': 'user', 'content': user_input })
     with st.chat_message('user'):
        st.markdown(user_input)
 
-prompt = ( f"{PERSONA}\n\nText to summarize:\n{user_input}")
+prompt = f"{PERSONA}\n\nText to summarize:\n{user_input}"
 
 with st.chat_message("Assistant"):
     placeholder = st.empty()

@@ -1,7 +1,6 @@
 from ollama import chat
 
-#  global variables
-MODEL = "mistral" # target llm model
+MODEL = "mistral" 
 PERSONA = """
 You are Atlas, a highly knowledgeable global travel guide, cultural researcher, and practical trip planner.
 

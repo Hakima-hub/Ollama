@@ -16,6 +16,11 @@ for message in st.session_state.messages:
     with st.chat_message(message['role']):
         st.markdown(message['content'])
 
+def getChatResponse (messages, model=MODEL):
+    with st.spinner("Wait for it..."):
+        response = chat(model=MODEL, messages=messages)
+        return response.message.content
+       
 def get_response():
     with st.chat_message('Asistant'):
 
