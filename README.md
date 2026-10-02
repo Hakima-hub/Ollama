@@ -6,15 +6,15 @@ Three small Streamlit apps that run local chat personas through Ollama. Each app
 
 A minimal chatbot using the Atlas travel-guide persona and Ollama's chat() API with full conversation history.
 
-Persona: Atlas, a global travel guide and trip planner.
-API used: ollama.chat() — sends the entire message history  on every turn, so the model has context from earlier in the conversation.
-Roles: uses valid Ollama roles (system, user, assistant); the system prompt is hidden from the rendered chat history.
+- **Persona**: Atlas, a global travel guide and trip planner.
+- **API used**: ollama.chat() — sends the entire message history  on every turn, so the model has context from earlier in the conversation.
+- **Roles**: uses valid Ollama roles (system, user, assistant); the system prompt is hidden from the rendered chat history.
 
 ### **simple_with_stream.py**
 
-Persona: same Atlas travel-guide persona as app.py.
-API used: ollama.chat(..., stream=True) — iterates over response chunks and updates the displayed message incrementally, rather than waiting for the full reply.
-Roles: same valid-role setup as app.py.
+- **Persona**: same Atlas travel-guide persona as app.py.
+- **API used**: ollama.chat(..., stream=True) — iterates over response chunks and updates the displayed message incrementally, rather than waiting for the full reply.
+- **Roles**: same valid-role setup as app.py.
 
 ### **simple_generate_chat.py**
 
